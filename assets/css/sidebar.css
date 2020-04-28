@@ -1,0 +1,73 @@
+:root{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    --sidebar-color: rgb(114, 27, 27);
+}
+.logo{
+    font-size: 40px;
+    color: white;
+    margin: 20px auto 20px auto;
+}
+.text-dec-feeds{
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-left: -3px;
+    margin-top: 7px;
+}
+.text-dec-profile{
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-left: -13.5px;
+    margin-top: 7px;
+}
+.text-dec-friends{
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-left: 1px;
+    margin-top: 7px;
+}
+.text-dec-users{
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-left: 4px;
+    margin-top: 7px;
+}
+.text-dec-que{
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-left: -13.5px;
+    margin-top: 7px;
+}
+.text-dec-sign-out{
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-left: -10.5px;
+    margin-top: 7px;
+}
+.sidebar{
+    margin: 0px;
+    margin-right: 10px;
+    height: 100vh;
+    width: 70px;
+    background-color: var(--sidebar-color);
+    position: fixed;
+    /* display: inline-block; */
+}
+.icon-elements{
+    position: absolute;
+    top: 30px;
+    left: 10%;
+}
+.my-feeds{
+    padding-left: 7px;
+}
+.user-profile{
+    padding-left: 7px;
+}
+.personal-que{
+    padding-left: 7px;
+}
+.signout{
+    padding-left: 7px;
+}

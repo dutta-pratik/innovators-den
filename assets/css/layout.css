@@ -1,0 +1,20 @@
+*{
+    margin: 0px;
+}
+.hero-layout{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: fixed;
+    border: 1px solid orange;
+}
+
+
+#main-layout{
+    margin-top: 7px;
+    height: 98vh;
+    margin-left: 75px;
+    width: 94%;
+    border: 1px solid yellow;
+    
+}

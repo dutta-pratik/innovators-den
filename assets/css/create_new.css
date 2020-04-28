@@ -1,0 +1,54 @@
+
+.card{
+    margin: 10% 25%;
+    height: 350px;
+    width: 300px;
+    /* border: 1px solid green; */
+    border-radius: 10px;
+    box-shadow: -3px -3px 7px rgb(179, 179, 179), 3px 3px 7px rgb(228, 228, 228);
+}
+
+.heading{
+    margin-left: 30%;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.form{
+    margin-left: 10%;
+    margin-bottom: 20px;
+}
+
+.email{
+    margin-bottom: 10px;
+}
+#email{
+    margin-top: 10px;
+}
+
+.password{
+    margin-bottom: 15px;
+}
+#password{
+    margin-top: 10px;
+}
+
+.create-button{
+    margin-left: 32%;
+    margin-top: 30px;
+}
+#submit{
+    font-size: 1rem;
+    padding: 7px 10px;
+    border: none;
+    font-weight: 700;
+    background-color: rgb(114, 27, 27);
+    color: white;
+    border-radius: 6px;
+    box-shadow: -3px -3px 7px rgb(168, 168, 168), 3px 3px 7px rgb(206, 206, 206);
+}
+#submit:hover{
+    color: rgb(114, 27, 27);
+    background-color: white;
+}

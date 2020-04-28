@@ -1,0 +1,43 @@
+
+
+<div class="sidebar">
+
+    <div class="icon-elements">
+
+        <div class="logo my-feeds">
+            <a href="users/myfeeds"><i class="fas fa-rss-square" style="color: white;"></i></a>
+            <br>
+
+            <span class="text-dec-feeds">Feeds</span>
+        </div>
+        <div class="logo user-profile">
+            <a href="/users/signin"><i class="far fa-user-circle" style="color: white;"></i></a>
+            <br>
+            <span class="text-dec-profile">Sign In Sign Up</span>
+        </div>
+        <div class="logo my-friends">
+            <a href="#"><i class="fas fa-user-friends"  style="color: white;"></i></a>
+            <br>
+            <span class="text-dec-friends">Friends</span>
+        </div>
+        <div class="logo list-of-user">
+            <a href="#"><i class="fas fa-users" style="color: white;"></i></a>
+            <br>
+            <span class="text-dec-users">Users</span>
+        </div>
+        <div class="logo personal-que">
+            <a href="#"><i class="far fa-question-circle" style="color: white;"></i></a>
+            <br>
+            <span class="text-dec-que">Questions</span>
+        </div>
+
+        <% if(locals.user){ %>
+            <div class="logo signout">
+                <a href="/users/signout"><i class="fas fa-sign-out-alt" style="color: white;"></i></a>
+                <br>
+                <span class="text-dec-sign-out">Sign Out</span>
+            </div>
+        <% } %>
+    </div>
+    
+</div>

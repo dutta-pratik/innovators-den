@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/css/signin.css">
+
+<div class="card">
+    
+    <div class="heading"> <Strong><h1>Sign In</h1></Strong>  </div>
+
+    <form action="/users/createsession" method="POST" class="form">
+
+        <div class="email">
+            <label for="email"> <strong>Email Id</strong> </label>
+            <input type="text" name="email" placeholder="Email Id" id="email" required>
+        </div>
+
+        <div class="password">
+            <label for="password"><strong>Password</strong> </label>
+            <input type="password" name="password" placeholder="Password" id="password" required>
+        </div>
+        
+        <div class="signin-button">
+            <input type="submit" name="submit" id="submit" value="Sign In">
+        </div>
+
+    </form>
+
+    <div class="forgot-password">
+        <a href="/users/resetpassword">Forgot Password</a>
+    </div>
+
+    <div class="create-new">
+        Don't have an account ? <a href="/users/createnew">Create one here</a>
+    </div>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    &nbsp; OR
+    <div class="social-login">
+        Sign Up using
+        <br>
+        <a href="/users/signin/google"><i id="social-login-img" class="fab fa-google"></i></a>
+    </div>
+
+</div>
