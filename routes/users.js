@@ -26,4 +26,6 @@ router.get("/myfeeds", userController.myFeeds);
 
 router.get("/signout", userController.signOut);
 
+router.get("/confirm/:userID/:code", userController.confirmEmail);
+
 module.exports = router;

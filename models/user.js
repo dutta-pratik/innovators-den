@@ -8,6 +8,13 @@ const userSchema = new mongoose.Schema({
     },
     password:{
         type: String
+    },
+    confirm_mail_code:{
+        type: String
+    },
+    confirm_mail_status:{
+        type: Boolean,
+        default: false
     }
 });
 

@@ -19,7 +19,12 @@ passport.use(new LocalStrategy({
             }
             if(!user || user.password != password){
                 // req.flash('error', 'Invalid Username/Password');
+                
                 console.log("Invalid Username");
+                return done(null, false);
+            }
+            if(user.confirm_mail_status == false){
+                console.log("confirm your email id");
                 return done(null, false);
             }
             return done(null, user);
