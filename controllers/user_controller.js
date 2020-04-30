@@ -38,6 +38,7 @@ module.exports.createSession = async function(req, res){
     //     return;
     // }
     console.log("Logged in Successfull");
+    req.flash("success", "Logged In successfully");
     return res.redirect("/");
 }
 

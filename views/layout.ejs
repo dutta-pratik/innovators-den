@@ -19,10 +19,11 @@
     <body>
         <div class="hero-layout">
 
-            
+            <% if(flash.success && flash.success.length > 0){ %>
+                <%= flash.success %> 
+            <% } %> 
             <%- include('_sidebar'); %> 
-           
-        
+
             <main id="main-layout">
                 <%- body %>
             </main>

@@ -1,5 +1,17 @@
 
 <div>
     <%= title %>
-    <%= locals.user %>
+    <%# locals.user %>
+
+    <% if(locals.user){ %> 
+    <div>
+        <!-- Box -->
+        <%- include("_box"); %>
+    </div>
+    <% } %> 
+    <div>
+        <!-- Posts -->
+    </div>
+
+
 </div>

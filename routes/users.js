@@ -5,7 +5,7 @@ const router = express.Router();
 const userController = require("../controllers/user_controller");
 
 //signin page
-router.get("/signin", userController.signIn);
+router.use("/signin", userController.signIn);
 
 //signin the user
 router.post("/createsession", passport.authenticate(
@@ -13,6 +13,10 @@ router.post("/createsession", passport.authenticate(
     {failureRedirect: "/users/signin"},
 
 ),userController.createSession);
+
+//signup using google
+router.get("/auth/google", passport.authenticate("google", {scope: ["profile", "email"]}));
+router.get("/auth/google/callback", passport.authenticate("google", {failureRedirect: "/users/signin"}), userController.createSession);
 
 //sign up manually
 router.post("/create", userController.createUser);
