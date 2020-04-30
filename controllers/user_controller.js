@@ -37,7 +37,7 @@ module.exports.createSession = async function(req, res){
     //     console.log("Error in Signing up the user ------> ", err);
     //     return;
     // }
-    console.log("Logged in Successfull");
+    // console.log("Logged in Successfull");
     req.flash("success", "Logged In successfully");
     return res.redirect("/");
 }
@@ -46,7 +46,8 @@ module.exports.createUser = async function(req, res){
     try{
         let user = await User.findOne({email: req.body.email});
         if(user){
-            console.log("User is already existed");
+            // console.log("User is already existed");
+            req.flash("error", "User already exists");
             return res.redirect("/users/signin");
         }else{
             if(req.body.password == req.body.confirmpassword){
@@ -57,8 +58,9 @@ module.exports.createUser = async function(req, res){
                     confirm_mail_code: randomKey
                 }, function(err, user){
                     if(err){console.log("Error in creating new User ----->", err); return;}
-                    console.log("User Successfully Created");
-
+                    // console.log("User Successfully Created");
+                    req.flash("success", "User Successfully Created");
+                    req.flash("success", "Check Email for Confirmation");
                     if(user){
                         //nodemailer
                         let htmlString = nodeMailer.renderTemplate({link: `http://localhost:8000/users/confirm/${user._id}/${user.confirm_mail_code}`}, "/mail_conf_page.ejs");
@@ -125,7 +127,8 @@ module.exports.confirmEmail = async function(req, res){
         let user = await User.findOne({_id: req.params.userID});
         if(user){
             if(user.confirm_mail_status == true){
-                console.log("Already confirmed!");
+                // console.log("Already confirmed!");
+                req.flash("success", "Already confirmed!");
                 return res.redirect("/");
             }
             if(user.confirm_mail_code == req.params.code){
@@ -133,11 +136,13 @@ module.exports.confirmEmail = async function(req, res){
                 await User.findOneAndUpdate({_id: req.params.userID}, {confirm_mail_status: true}, {
                     new: true
                 });
-                console.log("Email Confirmed");
+                req.flash("success", "Email Confirmed");
+                // console.log("Email Confirmed");
             }
             return res.redirect("/");
         }else{
-            console.log("User with that credentials not exists");
+            req.flash("error", "User doesn't exist");
+            // console.log("User with that credentials not exists");
         }
     }catch(err){
         console.log("Error in confirming Email---->", err);
