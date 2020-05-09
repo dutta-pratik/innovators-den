@@ -1,0 +1,25 @@
+.homepage-container{
+    width: 60%;
+    height: none;
+    border: 1px solid red;
+    position: relative;
+    display: flex;
+}
+
+.box{
+    margin: 20px 0px 10px 30px;
+    border: 1px solid orange;
+    /* position: fixed; */
+}
+
+#post-box{
+    resize: none;
+}
+
+#question-to{
+    margin-top: 7px;
+}
+
+/* #selectors{
+
+} */

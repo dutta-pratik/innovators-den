@@ -93,11 +93,20 @@ module.exports.createUser = async function(req, res){
     }
 }
 
-module.exports.resetPassword =  function(req, res){
+module.exports.resetPasswordPage =  function(req, res){
     console.log(req.body);
-    return res.render("reset_password", {
+    return res.render("reset_password_page", {
         
     });
+}
+
+module.exports.resetPassword = async function(req, res){
+    console.log(req.body);
+    // let user = User.findOne()
+    //send code through mailer
+
+    //render password_reset ejs
+    return res.render("reset_password");
 }
 
 module.exports.createNew =  function(req, res){
@@ -116,6 +125,7 @@ module.exports.myFeeds = function(req, res){
 
 module.exports.signOut = function(req, res){
     req.logout();
+    req.flash("success", "Successfully logged out!");
     return res.redirect("/");
 }
 

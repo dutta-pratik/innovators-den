@@ -21,7 +21,8 @@ router.get("/auth/google/callback", passport.authenticate("google", {failureRedi
 //sign up manually
 router.post("/create", userController.createUser);
 
-router.get("/resetpassword", userController.resetPassword);
+router.get("/resetpassword", userController.resetPasswordPage);
+router.post("/reset", userController.resetPassword);
 
 //create new user page
 router.get("/createnew", userController.createNew);

@@ -1,10 +1,14 @@
+<link rel="stylesheet" href="/css/index.css">
 
-<div>
-    <%= title %>
+<div class="homepage-container">
+    <% if(!locals.user){ %>
+        <%= title %> 
+    <% } %> 
+     
     <%# locals.user %>
 
     <% if(locals.user){ %> 
-    <div>
+    <div class="box">
         <!-- Box -->
         <%- include("_box"); %>
     </div>
@@ -12,6 +16,4 @@
     <div>
         <!-- Posts -->
     </div>
-
-
 </div>
