@@ -1,6 +1,6 @@
 
 <div>
-    <form action="#" method="POST" id="post-form">
+    <form action="/post/createpost" method="POST" id="post-form">
 
         <div>
             <!-- TextArea -->
@@ -12,7 +12,8 @@
             <!-- Question to -->
             <div>
                 <label for="question-to"> Question to:</label>
-                <select name="question" id="question-to">
+                <select name="question_to" id="question-to">
+                    <option value="All">All</option>
                     <option value="a">a</option>
                     <option value="b">b</option>
                 </select>
@@ -20,15 +21,16 @@
 
             <!-- Tags -->
             <div>
-                <input type="radio" id="contactChoice1"
-                       name="contact" value="email">
-                <label for="contactChoice1">Email</label>
-                <input type="radio" id="contactChoice2"
-                       name="contact" value="phone">
-                <label for="contactChoice2">Phone</label>
-                <input type="radio" id="contactChoice3"
-                       name="contact" value="mail">
-                <label for="contactChoice3">Mail</label>
+                <span>Tags: </span>
+                <input type="checkbox" id="interest1"
+                       name="interest" value="development">
+                <label for="interest1">Development</label>
+                <input type="checkbox" id="interest2"
+                       name="interest" value="Ideas">
+                <label for="interest2">Ideas</label>
+                <input type="checkbox" id="interest3"
+                       name="interest" value="General">
+                <label for="interest3">General</label>
             </div>
 
         </div>

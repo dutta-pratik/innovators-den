@@ -1,25 +1,52 @@
 .homepage-container{
-    width: 60%;
-    height: none;
+    width: 650px;
+    height: 98vh;
     border: 1px solid red;
     position: relative;
-    display: flex;
+    display: fixed;
 }
 
 .box{
     margin: 20px 0px 10px 30px;
     border: 1px solid orange;
-    /* position: fixed; */
+    position: absolute;
 }
-
 #post-box{
     resize: none;
+    font-size: medium;
 }
 
 #question-to{
     margin-top: 7px;
 }
 
-/* #selectors{
+.post-list{
+    height: 97vh;
+    width: 600px;
+    margin: 180px 0px 10px 30px;
+    border: 1px solid black;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.post-list::-webkit-scrollbar { /* WebKit */
+    width: 7px;
+    height: auto;
+    /*color: #131c44;*/
+}
+/* Track */
+.post-list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #0D0F28; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.post-list::-webkit-scrollbar-thumb {
+  background: #12244B; 
+  border-radius: 7px;
+}
 
-} */
+/* Handle on hover */
+.post-list::-webkit-scrollbar-thumb:hover {
+  background: #676E90; 
+}

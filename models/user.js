@@ -15,7 +15,19 @@ const userSchema = new mongoose.Schema({
     confirm_mail_status:{
         type: Boolean,
         default: false
-    }
+    },
+    reset_code:{
+        type: Number,
+        expires: 1*60*1000
+    },
+    question_recieved:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Post"
+    }],
+    post:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Post"  
+    }]
 });
 
 const User = mongoose.model("User", userSchema);

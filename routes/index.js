@@ -9,4 +9,8 @@ router.get("/", homeController.index);
 
 router.use("/users", require("./users"));
 
+router.use("/password", require("./password"));
+
+router.use("/post", require("./post"));
+
 module.exports = router;

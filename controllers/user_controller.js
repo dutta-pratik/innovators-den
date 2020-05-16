@@ -59,8 +59,7 @@ module.exports.createUser = async function(req, res){
                 }, function(err, user){
                     if(err){console.log("Error in creating new User ----->", err); return;}
                     // console.log("User Successfully Created");
-                    req.flash("success", "User Successfully Created");
-                    req.flash("success", "Check Email for Confirmation");
+                    
                     if(user){
                         //nodemailer
                         let htmlString = nodeMailer.renderTemplate({link: `http://localhost:8000/users/confirm/${user._id}/${user.confirm_mail_code}`}, "/mail_conf_page.ejs");
@@ -73,7 +72,7 @@ module.exports.createUser = async function(req, res){
                         }, (err, info) => {
                             if (err){
                                 console.log('Error in sending mail', err);
-                                return;
+                                return ;
                             }
                     
                             // console.log('Message sent', info);
@@ -81,6 +80,8 @@ module.exports.createUser = async function(req, res){
                         });
                     }
                     // renders to the page which tells to confirm the email id
+                    req.flash("success", "User Successfully Created");
+                    req.flash("success", "Check Email for Confirmation");
                     return res.render("confirmation_notification", {
                         email: user.email
                     });
@@ -93,21 +94,7 @@ module.exports.createUser = async function(req, res){
     }
 }
 
-module.exports.resetPasswordPage =  function(req, res){
-    console.log(req.body);
-    return res.render("reset_password_page", {
-        
-    });
-}
 
-module.exports.resetPassword = async function(req, res){
-    console.log(req.body);
-    // let user = User.findOne()
-    //send code through mailer
-
-    //render password_reset ejs
-    return res.render("reset_password");
-}
 
 module.exports.createNew =  function(req, res){
     console.log(req.body);
@@ -139,17 +126,15 @@ module.exports.confirmEmail = async function(req, res){
             if(user.confirm_mail_status == true){
                 // console.log("Already confirmed!");
                 req.flash("success", "Already confirmed!");
-                return res.redirect("/");
+                return res.redirect("/users/signin");
             }
             if(user.confirm_mail_code == req.params.code){
                 user.confirm_mail_status = true;
-                await User.findOneAndUpdate({_id: req.params.userID}, {confirm_mail_status: true}, {
-                    new: true
-                });
+                await user.save();
                 req.flash("success", "Email Confirmed");
                 // console.log("Email Confirmed");
             }
-            return res.redirect("/");
+            return res.redirect("/users/signin");
         }else{
             req.flash("error", "User doesn't exist");
             // console.log("User with that credentials not exists");
