@@ -6,6 +6,7 @@
     display: fixed;
 }
 
+/* Box */
 .box{
     margin: 20px 0px 10px 30px;
     border: 1px solid orange;
@@ -20,6 +21,7 @@
     margin-top: 7px;
 }
 
+/* Posts */
 .post-list{
     height: 97vh;
     width: 600px;
@@ -49,4 +51,64 @@
 /* Handle on hover */
 .post-list::-webkit-scrollbar-thumb:hover {
   background: #676E90; 
+}
+/* Post container */
+.post-container{
+    height: auto;
+    width: auto;
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+}
+
+.post{
+    height: 114;
+    width: 585px;
+    border: 1px solid red;
+    position: relative;
+    margin-bottom: 5px;
+    
+    display: flex;
+}
+#post-data{
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#post-btn{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    padding: 5px;
+    left: 470px;
+}
+#like{
+    font-size: x-large;
+    margin: 8px;   
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+#dislike{
+    font-size: x-large;
+    margin: 8px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+#no{
+    padding: 3px;
+}
+#goto{
+    cursor: pointer;
+    margin-left: 17px;
+}
+#like:focus{
+    outline: none;
+}
+#dislike:focus{
+    outline: none;
 }

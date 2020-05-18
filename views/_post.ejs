@@ -1,19 +1,75 @@
 <div class="post-container">
 
-    <div>
+    <% for(let i=0; i<posts.length; i++){ %>
 
-    </div>
+        <% if(locals.user){ %>
 
-    <div>
-        <div>
-            <!-- likes -->
-        </div>
-        <div>
-            <!-- dislike -->
-        </div>
-        <div>
-            <!-- go to  post -->
-        </div>
-    </div>
+           
+            <!-- <%# if(locals.user._id.equals(posts[0].user._id)){ %>
+                <h1><%#= locals.user %></h1>
+                <%#= console.log("Inside if loop") %>  
+            <%# } %>  -->
+            
+
+            <% if(!(locals.user._id.equals(posts[i].user._id))){ %>
+            
+                <div class="post">
+    
+                    <div>
+                        <textarea name="post-data" id="post-data" cols="55" rows="7" readonly style="resize: none; "><%= posts[i].post %> </textarea>
+                    </div>
+                
+                    <div id="post-btn">
+                        <div>
+                            <!-- likes -->
+                            <button id="like"><i class="fas fa-thumbs-up"></i></button>
+                            <span id="no">100</span>
+                        </div>
+                        <div>
+                            <!-- dislike -->
+                            <button id="dislike"><i class="fas fa-thumbs-down"></i></button>
+                            <span id="no">12</span>
+                        </div>
+                        <div>
+                            <!-- go to  post -->
+                            <a href="#" id="goto">Go to</a>
+                        </div>
+                    </div>
+                
+                </div>
+    
+            <% } %> 
+
+        <% }else{ %>
+            
+            <div class="post">
+
+                <div>
+                    <textarea name="post-data" id="post-data" cols="55" rows="7" readonly style="resize: none; "><%= posts[i].post %> </textarea>
+                </div>
+            
+                <div id="post-btn">
+                    <div>
+                        <!-- likes -->
+                        <button id="like"><i class="fas fa-thumbs-up"></i></button>
+                        <span id="no">100</span>
+                    </div>
+                    <div>
+                        <!-- dislike -->
+                        <button id="dislike"><i class="fas fa-thumbs-down"></i></button>
+                        <span id="no">12</span>
+                    </div>
+                    <div>
+                        <!-- go to  post -->
+                        <a href="#" id="goto">Go to</a>
+                    </div>
+                </div>
+            
+            </div>
+
+        <% } %> 
+
+    <% } %> 
 
 </div>
+
