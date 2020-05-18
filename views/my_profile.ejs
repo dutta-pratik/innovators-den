@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/css/my_profile.css">
+
+<div>
+    <form action="/users/save_profile" method="POST" id="profile-form">
+
+        <div id="profile-name">
+            <label for="firstname">First Name: </label>
+            <input type="text" name="firstname" id="firstname">
+        </div>
+        
+        <div id="profile-name">
+            <label for="firstname">Second Name: </label>
+            <input type="text" name="secondname" id="secondname">
+        </div>
+        
+
+        <div id="profile-pref">
+            <div>Select your preference: </div>
+            <input type="checkbox" id="interest1"
+                    name="interest" value="development">
+            <label for="interest1">Development</label>
+            <input type="checkbox" id="interest2"
+                    name="interest" value="Ideas">
+            <label for="interest2">Ideas</label>
+            <input type="checkbox" id="interest3"
+                    name="interest" value="General">
+            <label for="interest3">General</label>
+        </div>
+
+        <div id="profile-qtn">
+            <span>No of Questions Posted</span>
+        </div>
+
+        <!-- Ratings -->
+
+        <input type="submit" name="submit" id="submit" value="Save">
+
+    </form>
+</div>

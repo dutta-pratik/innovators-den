@@ -1,19 +1,60 @@
-<link rel="stylesheet" href="/css/my_feeds.css">
+<link rel="stylesheet" href="/css/index.css">
 
-<div class="feeds">
+<div class="post-container">
 
-    <div class="typing-box">
-        <form action="">
-            <textarea style="resize: none;" name="posts" id="new-post-box" cols="50" rows="5"></textarea>
-        </form>
-    </div>
+    <% for(let i=0; i<posts.length; i++){ %>
 
-    <div class="feeds-list">
+        <% if(locals.user){ %>
+        
+            <% if(!(locals.user._id.equals(posts[i].user._id))){ %>
+                <div class="post">
+    
+                    <div>
+                        <textarea name="post-data" id="post-data" cols="55" rows="7" readonly style="resize: none; "><%= posts[i].post %> </textarea>
+                    </div>
+                
+                    <div id="post-btn">
+                        <div>
+                            <!-- likes -->
+                            <button id="like"><i class="fas fa-thumbs-up"></i></button>
+                            <span id="no">100</span>
+                        </div>
+                        <div>
+                            <!-- dislike -->
+                            <button id="dislike"><i class="fas fa-thumbs-down"></i></button>
+                            <span id="no">12</span>
+                        </div>
+                        <div>
+                            <!-- go to  post -->
+                            <a href="#" id="goto">Go to</a>
+                        </div>
+                    </div>
+                    <div id="tag">
+                        <ul>
+                            <% for(let k=0; k<posts[i].interest.length; k++){ %>
+                                <li id="tag-list">
+                                    <code> #<%= (posts[i].interest[k]) %> </code>
+                                    
+                                </li>
+                            <% } %> 
+                        </ul>
+                            
+                    </div>
 
-    </div>
+                    <div id="post-author">
+                        <span>
+                            <%= posts[i].user.first_name %> 
+                        </span>
+                        <span><%= posts[i].user.second_name %></span>
+                    </div>
+                
+                </div>
+    
+            <% } %> 
+
+        <% }%>
+
+    <% } %> 
 
 </div>
 
-<div class="chat">
-
-</div>

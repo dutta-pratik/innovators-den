@@ -32,6 +32,10 @@ router.get("/signout", userController.signOut);
 
 router.get("/confirm/:userID/:code", userController.confirmEmail);
 
-// router.get("/profile", userController.myProfile);
+router.get("/profile", userController.myProfile);
+
+router.post("/save_profile", userController.saveProfile);
+
+router.get("/member_list", userController.memberList);
 
 module.exports = router;

@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Post = require("../models/post");
 const keyGen = require("random-key");
 const nodeMailer = require("../config/nodemailer");
 
@@ -11,33 +12,9 @@ module.exports.signIn =  function(req, res){
     return res.render("sign-in", {
         sign:"Sign In",
     });
-    // console.log(req.body);
-    // return res.render("sign-in", {
-    //     sign:"Sign In",
-    // });
 }
 
 module.exports.createSession = async function(req, res){
-    // try{
-    //     let user = await User.findOne({email: req.body.email});
-    //     if(user){
-    //         if(user.password == req.body.password){
-    //             console.log("User sign in successfull");
-    //             console.log(res.locals);
-    //             return res.redirect("/");
-    //         }else{
-    //             console.log("Email or Password is invalid");
-    //             return res.redirect("/users/signin");
-    //         }
-    //     }else{
-    //         console.log("User not Exists");
-    //         return res.redirect("/users/signin");
-    //     }
-    // }catch(err){
-    //     console.log("Error in Signing up the user ------> ", err);
-    //     return;
-    // }
-    // console.log("Logged in Successfull");
     req.flash("success", "Logged In successfully");
     return res.redirect("/");
 }
@@ -103,11 +80,19 @@ module.exports.createNew =  function(req, res){
     });
 }
 
-module.exports.myFeeds = function(req, res){
-    console.log(req.body);
-    return res.render("my_feeds", {
-        
-    });
+module.exports.myFeeds = async function(req, res){
+    try{
+        let posts = await Post.find({})
+        .sort("-createdAt")
+        .populate("user");
+        return res.render("index", {
+            posts: posts
+        });
+    }catch(err){
+        console.log("Error in my Feeds --> ", err);
+        return;
+    }
+    
 }
 
 module.exports.signOut = function(req, res){
@@ -143,4 +128,41 @@ module.exports.confirmEmail = async function(req, res){
         console.log("Error in confirming Email---->", err);
     }
 
+}
+
+module.exports.myProfile = async function(req, res){
+    try{
+
+        return res.render("my_profile");
+    }catch(err){
+        console.log("error in profile page---> ", err);
+        return;
+    }
+}
+
+module.exports.saveProfile = async function(req, res){
+    try{
+        let user = await User.findOne({_id: req.user._id});
+        console.log(req.body);
+        if(user){
+            user.first_name = req.body.firstname,
+            user.second_name = req.body.secondname,
+            user.my_preference = req.body.interest,
+            await user.save();
+        }
+        req.flash("success", "Profile Saved");
+        return res.redirect("/");
+    }catch(err){
+        console.log("Error in saving profile--> ", err);
+        return;
+    }
+}
+
+module.exports.memberList = async function(req, res){
+    try{
+        
+    }catch(err){
+        console.log("Error in fetching member list--> ", err);
+        return;
+    }
 }

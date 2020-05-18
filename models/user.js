@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
+    first_name:{
+        type: String
+    },
+    second_name:{
+        type: String
+    },
     email:{
         type: String,
         required: true,
@@ -20,6 +26,9 @@ const userSchema = new mongoose.Schema({
         type: Number,
         expires: 1*60*1000
     },
+    my_preference:[{
+        type: String
+    }],
     question_recieved:[{
         type: mongoose.Schema.Types.ObjectId,
         ref:"Post"

@@ -24,7 +24,7 @@
 /* Posts */
 .post-list{
     height: 97vh;
-    width: 600px;
+    width: 610px;
     margin: 180px 0px 10px 30px;
     border: 1px solid black;
     position: fixed;
@@ -63,7 +63,7 @@
 
 .post{
     height: 114;
-    width: 585px;
+    width: 595px;
     border: 1px solid red;
     position: relative;
     margin-bottom: 5px;
@@ -81,11 +81,12 @@
     flex-direction: column;
     border: 1px solid red;
     padding: 5px;
-    left: 470px;
+    left: 450px;
 }
 #like{
     font-size: x-large;
-    margin: 8px;   
+    margin-top: 5px;
+    margin-bottom: 10px;   
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -93,7 +94,8 @@
 }
 #dislike{
     font-size: x-large;
-    margin: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px; 
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -111,4 +113,29 @@
 }
 #dislike:focus{
     outline: none;
+}
+
+#tag{
+    height: auto;
+    width: 65px;
+    position: absolute;
+    border: 1px solid blue;
+    left: 525px;
+}
+#tag-list{
+    font-size: 0.8rem;
+    font-weight: bold;
+    /* color: lightgray; */
+    /* background-color: gray; */
+    list-style: none;
+}
+
+#post-author{
+    font-size: 0.9rem;
+    height: auto;
+    width: 65px;
+    position: absolute;
+    border: 1px solid blue;
+    top: 25px;
+    left: 525px;
 }

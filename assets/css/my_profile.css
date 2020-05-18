@@ -1,0 +1,33 @@
+/* BUTTONS */
+
+#submit{
+    margin-left: 20px;
+    font-size: 1rem;
+    padding: 7px 10px;
+    border: none;
+    font-weight: 700;
+    background-color: rgb(114, 27, 27);
+    color: white;
+    border-radius: 6px;
+    box-shadow: -3px -3px 7px rgb(168, 168, 168), 3px 3px 7px rgb(206, 206, 206);
+}
+#submit:hover{
+    color: rgb(114, 27, 27);
+    background-color: white;
+}
+
+/* PROFILE */
+
+#profile-form{
+    
+}
+
+#profile-name{
+    margin: 10px;
+    padding: 5px;
+}
+
+#profile-qtn, #profile-pref{
+    margin: 10px;
+    padding: 5px;
+}
