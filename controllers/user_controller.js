@@ -85,8 +85,14 @@ module.exports.myFeeds = async function(req, res){
         let posts = await Post.find({})
         .sort("-createdAt")
         .populate("user");
-        return res.render("index", {
-            posts: posts
+        let pref = [];
+        console.log(req.user.my_preference);
+        for(let i=0; i<req.user.my_preference.length; i++){
+            pref.push(req.user.my_preference[i]);
+        }
+        return res.render("my_feeds", {
+            posts: posts,
+            pref: pref
         });
     }catch(err){
         console.log("Error in my Feeds --> ", err);
@@ -160,7 +166,7 @@ module.exports.saveProfile = async function(req, res){
 
 module.exports.memberList = async function(req, res){
     try{
-        
+
     }catch(err){
         console.log("Error in fetching member list--> ", err);
         return;
