@@ -18,6 +18,14 @@ const postSchema = new mongoose.Schema({
     ans:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Answer"
+    }],
+    like:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }],
+    dislike:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     }]
 
 },{

@@ -15,4 +15,6 @@ router.use("/post", require("./post"));
 
 router.use("/answer", require("./answer"));
 
+router.use("/control", require("./control"));
+
 module.exports = router;

@@ -1,7 +1,7 @@
 .homepage-container{
     width: 650px;
     height: 98vh;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     position: relative;
     display: fixed;
 }
@@ -9,7 +9,7 @@
 /* Box */
 .box{
     margin: 20px 0px 10px 30px;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     position: absolute;
 }
 #post-box{
@@ -26,7 +26,7 @@
     height: 97vh;
     width: 610px;
     margin: 180px 0px 10px 30px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     position: fixed;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -56,7 +56,7 @@
 .post-container{
     height: auto;
     width: auto;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
     flex-direction: column;
 }
@@ -64,7 +64,7 @@
 .post{
     height: 114;
     width: 595px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     position: relative;
     margin-bottom: 5px;
     
@@ -79,9 +79,9 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 5px;
-    left: 450px;
+    left: 455px;
 }
 #like{
     font-size: x-large;
@@ -107,6 +107,7 @@
 #goto{
     cursor: pointer;
     margin-left: 17px;
+    color: rgb(145, 47, 47);
 }
 #like:focus{
     outline: none;
@@ -119,7 +120,7 @@
     height: auto;
     width: 65px;
     position: absolute;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     left: 525px;
 }
 #tag-list{
@@ -135,7 +136,7 @@
     height: auto;
     width: 65px;
     position: absolute;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     top: 25px;
     left: 525px;
 }

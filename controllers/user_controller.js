@@ -94,7 +94,8 @@ module.exports.myFeeds = async function(req, res){
         }
         return res.render("my_feeds", {
             posts: posts,
-            pref: pref
+            pref: pref,
+            loggedUser: req.user
         });
     }catch(err){
         console.log("Error in my Feeds --> ", err);
@@ -241,7 +242,8 @@ module.exports.personalQuestion = async function(req, res){
         let postRecieved = await user.question_recieved;
         return res.render("personal_que", {
             specificPostSent,
-            postRecieved
+            postRecieved,
+            loggedUser: req.user
         });
     }catch(err){
         console.log("Error in following member--> ", err);

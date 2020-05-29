@@ -1,3 +1,4 @@
+<br>
 <div class="post-container">
 
     <% for(let i=0; i<posts.length; i++){ %>
@@ -13,17 +14,29 @@
                     <div id="post-btn">
                         <div>
                             <!-- likes -->
-                            <button id="like"><i class="fas fa-thumbs-up"></i></button>
-                            <span id="no">100</span>
+                            <% if(posts[i].like.includes(loggedUser._id)){ %>
+                                <button id="like"><a href="/control/like/<%= posts[i]._id %>"><i class="fas fa-thumbs-up" style="color: rgb(114, 27, 27);"></i></a></button>
+                                <span id="no"><%= posts[i].like.length %> </span>
+                            <% }else{ %>
+                                <button id="like"><a href="/control/like/<%= posts[i]._id %>"><i class="fas fa-thumbs-up" style="color: grey;"></i></a></button>
+                                <span id="no"><%= posts[i].like.length %></span>
+                            <% } %> 
+                            
                         </div>
                         <div>
                             <!-- dislike -->
-                            <button id="dislike"><i class="fas fa-thumbs-down"></i></button>
-                            <span id="no">12</span>
+                            <% if(posts[i].dislike.includes(loggedUser._id)){ %>
+                                <button id="dislike"><a href="/control/dislike/<%= posts[i]._id %>"><i class="fas fa-thumbs-down" style="color: rgb(114, 27, 27);"></i></a></button>
+                                <span id="no"><%= posts[i].dislike.length %></span>
+                            <% }else{ %>
+                                <button id="dislike"><a href="/control/dislike/<%= posts[i]._id %>"><i class="fas fa-thumbs-down" style="color: gray;"></i></a></button>
+                                <span id="no"><%= posts[i].dislike.length %></span>
+                            <% } %> 
+                            
                         </div>
                         <div>
                             <!-- go to  post -->
-                            <a href="/post/view/<%= posts[i]._id %>" id="goto">Go to</a>
+                            <a href="/post/view/<%= posts[i]._id %>" id="goto"><i class="fas fa-arrow-right" style="font-size: larger;"></i></a>
                         </div>
                     </div>
                     <div id="tag">

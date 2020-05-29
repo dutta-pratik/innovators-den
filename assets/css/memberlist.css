@@ -1,7 +1,7 @@
 .member-list-container{
     height: 98vh;
     width: 600px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
     height: 100px;
     width: 700px;
     margin-bottom: 7px;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
     position: relative;
 }
@@ -21,7 +21,7 @@
 .member-dtls{
     height: 100px;
     width: 450px;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
 }
 
 .member-btns{

@@ -2,7 +2,8 @@
 
 <div class="homepage-container">
     <% if(!locals.user){ %>
-        <%= title %> 
+        <strong style="font-size: large;"><%= title %></strong> 
+        <p>Plese Sign Up Yourself to be a part of wonderful Innovator's Family</p>
     <% } %> 
      
     <%# locals.user %>
@@ -12,8 +13,11 @@
         <!-- Box -->
         <%- include("_box"); %>
     </div>
-    <% } %> 
+<hr>
     <div class="post-list">
         <%- include("_post"); %>
     </div>
+
+    <% } %> 
+    
 </div>

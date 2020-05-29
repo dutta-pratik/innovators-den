@@ -57,7 +57,8 @@ module.exports.viewPost = async function(req, res){
         console.log(post);
         if(post){
             return res.render("view_post",{
-                post
+                post,
+                loggedUser: req.user
             });
         }
         

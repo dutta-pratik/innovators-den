@@ -2,14 +2,14 @@
     height: 100vh;
     position: relative;
     display: flex;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     flex-direction: column;
 }
 
 .qstn-sent{
     height: auto;
     max-height: 40vh;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     overflow-y: scroll;
     overflow-x: hidden;
     display: flex;
@@ -18,18 +18,25 @@
 
 .qstn-recieved{
     height: auto;
-    max-height: 45vh;
+    /* max-height: 45vh; */
     top: 500px;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
 .post{
     height: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     position: relative;
     margin-bottom: 5px;
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
+}
+
+#post-data{
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #post-btn{
@@ -59,11 +66,13 @@
     padding: 3px;
 }
 #goto{
+    width: 30px;
     cursor: pointer;
     margin-left: 15px;
     position: absolute;
     top: 75px;
     left: -5px;
+    color: rgb(145, 47, 47);
 }
 #like:focus{
     outline: none;
@@ -76,7 +85,7 @@
     height: auto;
     width: 65px;
     position: absolute;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     left: 545px;
     top: 10px;
 }
@@ -93,7 +102,7 @@
     height: auto;
     width: 65px;
     position: absolute;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     top: 75px;
     left: 545px;
 }

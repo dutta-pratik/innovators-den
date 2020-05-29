@@ -6,7 +6,7 @@ module.exports.addAnswer = async function(req, res){
     try{
         let postId = await req.params.id;
         let post = await Post.findOne({_id: postId});
-        console.log("addAnswer", req.body);
+        // console.log("addAnswer", req.body);
         if(post){
             let answer = await Answer.create({
                 ans: req.body.ans,
