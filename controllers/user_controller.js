@@ -235,5 +235,16 @@ module.exports.unfollowMember = async function(req, res){
 }
 
 module.exports.personalQuestion = async function(req, res){
-    
+    try{
+        let user = await User.findOne({_id: req.user._id}).populate("question_sent").populate("question_recieved");
+        let specificPostSent = await user.question_sent;
+        let postRecieved = await user.question_recieved;
+        return res.render("personal_que", {
+            specificPostSent,
+            postRecieved
+        });
+    }catch(err){
+        console.log("Error in following member--> ", err);
+        return;
+    }
 }

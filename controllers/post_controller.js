@@ -17,13 +17,28 @@ module.exports.createPost = async function(req, res){
             question_to: req.body.question_to,
             interest: req.body.interest
         });
+        
+        if(post && (req.body.question_to == 'All')){
 
-        if(post){
             let user = await User.findOne({_id: req.user._id});
             user.post.push(post._id);
             await user.save();
             req.flash("success", "Post Published");
             return res.redirect("/");
+
+        }else if(post){
+
+            let user = await User.findOne({_id: req.user._id});
+            user.question_sent.push(post._id);
+            await user.save();
+
+            let quetospecific = await User.findOne({email: req.body.question_to});
+            quetospecific.question_recieved.push(post._id);
+            await quetospecific.save();
+
+            req.flash("success", "Post Published");
+            return res.redirect("/users/personal_que");
+
         }
         
         

@@ -29,6 +29,10 @@ const userSchema = new mongoose.Schema({
     my_preference:[{
         type: String
     }],
+    question_sent:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Post"
+    }],
     question_recieved:[{
         type: mongoose.Schema.Types.ObjectId,
         ref:"Post"
