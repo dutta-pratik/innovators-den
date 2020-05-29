@@ -35,7 +35,7 @@
                                     </div>
                                     <div>
                                         <!-- go to  post -->
-                                        <a href="#" id="goto">Go to</a>
+                                        <a href="/post/view/<%= posts[i]._id %>" id="goto">Go to</a>
                                     </div>
                                 </div>
                                 <div id="tag">
@@ -65,13 +65,12 @@
                     <% } %> 
 
                 <% } %> 
-                <% if(isPost <= 0){ %>
-                    <%# console.log(isPost); %> 
-                    <h2>No Posts Available</h2>
-                <% } %> 
     
             <% } %>
-            
+            <% if(isPost <= 0){ %>
+                <%# console.log(isPost); %> 
+                <h2>No Posts Available</h2>
+            <% } %> 
         <% }%>
 
     <% } %> 

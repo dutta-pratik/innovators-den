@@ -1,0 +1,67 @@
+/* .view-container{
+    display: flex;
+    position: relative;
+
+} */
+
+.view-data{
+    max-height: 170px;
+    height: 150px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid red;
+    margin: 7px 0px;
+}
+
+.view-ans-list{
+    margin-top: 5px;
+    height: 50vh;
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#submit{
+    margin-top: -10px;
+    font-size: 0.9rem;
+    padding: 7px 10px;
+    border: none;
+    font-weight: 700;
+    background-color: rgb(114, 27, 27);
+    color: white;
+    border-radius: 6px;
+    box-shadow: -3px -3px 7px rgb(168, 168, 168), 3px 3px 7px rgb(206, 206, 206);
+}
+#submit:hover{
+    color: rgb(114, 27, 27);
+    background-color: white;
+    cursor: pointer;
+}
+
+.view-ans-list-card{
+    /* height: auto; */
+    /* max-height: 100px; */
+    height: 100px;
+
+    border: 1px solid green;
+    position: relative;
+    margin-top: 3px;
+}
+
+.view-ans-list-content{
+    /* height: auto; */
+    height: 100px;
+    width: 466px;
+    /* max-height: 100px; */
+    border: 1px solid orange;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.view-ans-list-btn{
+    position: absolute;
+    top: -100px;
+    left: 500px;
+}

@@ -44,5 +44,25 @@ module.exports.createPost = async function(req, res){
         
     }catch(err){
         console.log("Error in Creating Post", err);
+        return;
+    }
+}
+
+module.exports.viewPost = async function(req, res){
+    try{
+        let postId = await req.params.id;
+        let post = await Post.findOne({_id: postId})
+        .populate("-createdAt")
+        .populate("ans");
+        console.log(post);
+        if(post){
+            return res.render("view_post",{
+                post
+            });
+        }
+        
+    }catch(err){
+        console.log("Error in Creating Post", err);
+        return;
     }
 }

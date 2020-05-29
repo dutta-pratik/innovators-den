@@ -13,4 +13,6 @@ router.use("/password", require("./password"));
 
 router.use("/post", require("./post"));
 
+router.use("/answer", require("./answer"));
+
 module.exports = router;

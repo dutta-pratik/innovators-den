@@ -14,6 +14,10 @@ const postSchema = new mongoose.Schema({
     },
     interest:[{
         type:String
+    }],
+    ans:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Answer"
     }]
 
 },{

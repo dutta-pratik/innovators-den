@@ -1,10 +1,12 @@
 .member-list-container{
     height: 98vh;
-    width: 700px;
+    width: 600px;
     border: 1px solid red;
     position: fixed;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .member-list-card{
@@ -18,7 +20,7 @@
 
 .member-dtls{
     height: 100px;
-    width: 550px;
+    width: 450px;
     border: 1px solid yellow;
 }
 
@@ -48,21 +50,28 @@
 
 .member-name{
     position: absolute;
-    top: 10px;
+    top: 7px;
     left: 100px;
     display: flex;
 }
 
-.member-qtn{
+.member-email{
     position: absolute;
     top: 30px;
     left: 100px;
     display: flex;
 }
 
-.member-follower{
+.member-qtn{
     position: absolute;
     top: 50px;
+    left: 100px;
+    display: flex;
+}
+
+.member-follower{
+    position: absolute;
+    top: 70px;
     left: 100px;
     display: flex;
 }
