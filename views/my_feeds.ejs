@@ -5,14 +5,16 @@
     <% for(let i=0; i<posts.length; i++){ %>
 
         <% if(locals.user){ %>
-        
+            <% let isPost = 0; %> 
             <% if(!(locals.user._id.equals(posts[i].user._id))){ %>
                 
                 <% for(let k=0; k<pref.length; k++){ %>
                     <% for(let m=0; m<posts[0].interest.length; m++){ %>
+                        
                         <% if(pref[k] == (posts[i].interest[m])){ %>
                             <% console.log("There") %> 
-
+                            <% isPost++; %>
+                            <%# console.log(isPost); %> 
                             <!-- shows only the post whose preference matches with the user interest -->
                             <div class="post">
     
@@ -63,9 +65,13 @@
                     <% } %> 
 
                 <% } %> 
-                 
-            <% } %> 
-
+                <% if(isPost <= 0){ %>
+                    <%# console.log(isPost); %> 
+                    <h2>No Posts Available</h2>
+                <% } %> 
+    
+            <% } %>
+            
         <% }%>
 
     <% } %> 

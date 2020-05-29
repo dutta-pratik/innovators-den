@@ -6,7 +6,7 @@ const nodeMailer = require("../config/nodemailer");
 
 module.exports.signIn =  function(req, res){
      //if user is already sign in
-     if(req.isAuthenticated()){
+    if(req.isAuthenticated()){
         return res.redirect("/");
     }
     return res.render("sign-in", {
@@ -82,11 +82,13 @@ module.exports.createNew =  function(req, res){
 
 module.exports.myFeeds = async function(req, res){
     try{
+        if(!req.isAuthenticated()){
+            return res.redirect("/");
+        }
         let posts = await Post.find({})
         .sort("-createdAt")
         .populate("user");
         let pref = [];
-        console.log(req.user.my_preference);
         for(let i=0; i<req.user.my_preference.length; i++){
             pref.push(req.user.my_preference[i]);
         }
@@ -138,8 +140,14 @@ module.exports.confirmEmail = async function(req, res){
 
 module.exports.myProfile = async function(req, res){
     try{
-
-        return res.render("my_profile");
+        if(!req.isAuthenticated()){
+            return res.redirect("/");
+        }
+        let user = req.user;
+        console.log(user);
+        return res.render("my_profile",{
+            user: user
+        });
     }catch(err){
         console.log("error in profile page---> ", err);
         return;
@@ -148,6 +156,9 @@ module.exports.myProfile = async function(req, res){
 
 module.exports.saveProfile = async function(req, res){
     try{
+        if(!req.isAuthenticated()){
+            return res.redirect("/");
+        }
         let user = await User.findOne({_id: req.user._id});
         console.log(req.body);
         if(user){
@@ -166,9 +177,63 @@ module.exports.saveProfile = async function(req, res){
 
 module.exports.memberList = async function(req, res){
     try{
-
+        if(!req.isAuthenticated()){
+            return res.redirect("/");
+        }
+        let user = await User.find({});
+        // console.log("logged", req.user);          
+        return res.render("memberlist", {
+            user: user,
+            loggedUser: req.user
+        });
     }catch(err){
         console.log("Error in fetching member list--> ", err);
         return;
     }
+}
+
+module.exports.followMember = async function(req, res){
+    try{
+        let currentUser = req.user;
+        let userFollow = req.params.id;
+        let isUser = await User.findOne({_id: userFollow});
+        if(isUser){
+            currentUser.follow.push(userFollow);
+            await currentUser.save();
+            isUser.follower.push(currentUser._id);
+            await isUser.save();
+            return res.redirect("/users/member_list");
+        }
+
+    }catch(err){
+        console.log("Error in following member--> ", err);
+        return;
+    }
+}
+
+module.exports.unfollowMember = async function(req, res){
+    try{
+        let currentUser = req.user;
+        console.log(currentUser);
+        let userUnFollow = req.params.id;
+        let isUser = await User.findOne({_id: userUnFollow});
+        if(isUser){
+            currentUser.follow = await currentUser.follow.filter(function(id){
+                return id != userUnFollow;
+            });
+            await currentUser.save();
+            isUser.follower = await isUser.follower.filter(function(id){
+                return !(id.equals(currentUser._id));
+            });
+            await isUser.save();
+            return res.redirect("/users/member_list");
+        }
+    }catch(err){
+        console.log("Error in following member--> ", err);
+        return;
+    }
+}
+
+module.exports.personalQuestion = async function(req, res){
+    
 }

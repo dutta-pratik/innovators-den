@@ -6,7 +6,12 @@
         
 
         <% if(locals.user){ %>
-
+            
+            <div class="logo home">
+                <a href="/"><i class="fas fa-home" style="color: white;"></i></a>
+                <br>
+                <span class="text-dec-home">Home</span>
+            </div>
             <div class="logo my-feeds">
                 <a href="/users/myfeeds"><i class="fas fa-rss-square" style="color: white;"></i></a>
                 <br>
@@ -18,18 +23,13 @@
                 <br>
                 <span class="text-dec-profile">Profile</span>
             </div>
-            <div class="logo my-friends">
-                <a href="#"><i class="fas fa-user-friends"  style="color: white;"></i></a>
-                <br>
-                <span class="text-dec-friends">Friends</span>
-            </div>
             <div class="logo list-of-user">
                 <a href="/users/member_list"><i class="fas fa-users" style="color: white;"></i></a>
                 <br>
                 <span class="text-dec-users">Members</span>
             </div>
             <div class="logo personal-que">
-                <a href="#"><i class="far fa-question-circle" style="color: white;"></i></a>
+                <a href="/users/personal_que"><i class="far fa-question-circle" style="color: white;"></i></a>
                 <br>
                 <span class="text-dec-que">Questions</span>
             </div>

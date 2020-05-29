@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/css/memberlist.css">
+
+<% if(locals.user){ %>
+    
+    <div class="member-list-container">
+
+        <% for(let i=0; i<user.length; i++){ %>
+            <% if(!(loggedUser._id.equals(user[i]._id))){ %>
+                <div class="member-list-card">
+                    <div class="member-dtls">
+                        <!-- Details -->
+                        <div class="member-name">
+                            <%= user[i].first_name %> <%= user[i].second_name %>  
+                        </div>
+                        <div class="member-qtn">
+                            <span>No. of Questions Posted: </span> &nbsp; <%= user[i].post.length %> 
+                        </div>
+                        <div class="member-follower">
+                            <span>Followers: </span> &nbsp; <%= user[i].follower.length %> 
+                        </div>
+                    </div>
+                    <div class="member-btns">
+                        <!-- buttons -->
+                        
+                            <% if((loggedUser.follow).includes(user[i]._id)){ %> 
+                                <a href="/users/unfollow/<%= user[i]._id %>"><button>UnFollow</button></a> 
+                            <% }else{ %> 
+                                <a href="/users/follow/<%= user[i]._id %>"><button>Follow</button></a> 
+                            <% } %> 
+                       
+                    </div>
+                </div>
+            <% } %> 
+        <% } %> 
+        
+    </div>
+
+<% } %> 

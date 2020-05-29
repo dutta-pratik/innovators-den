@@ -2,7 +2,8 @@
 
     <% for(let i=0; i<posts.length; i++){ %>
 
-            
+            <% if(posts[i].question_to == 'All'){ %> 
+
                 <div class="post">
     
                     <div>
@@ -44,7 +45,8 @@
                     </div>
                 
                 </div>
-    
+
+            <% } %> 
             
     <% } %> 
 

@@ -5,12 +5,14 @@
 
         <div id="profile-name">
             <label for="firstname">First Name: </label>
-            <input type="text" name="firstname" id="firstname">
+            <% let firstname = user.first_name %>
+            <input type="text" name="firstname" id="firstname" placeholder= <%= firstname %> >
         </div>
         
         <div id="profile-name">
             <label for="firstname">Second Name: </label>
-            <input type="text" name="secondname" id="secondname">
+            <% let secondname = user.second_name %>
+            <input type="text" name="secondname" id="secondname" placeholder=<%= secondname  %> >
         </div>
         
 
@@ -28,7 +30,7 @@
         </div>
 
         <div id="profile-qtn">
-            <span>No of Questions Posted</span>
+            <span>No of Questions Posted: </span> <%= user.post.length %> 
         </div>
 
         <!-- Ratings -->

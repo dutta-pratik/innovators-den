@@ -14,8 +14,14 @@
                 <label for="question-to"> Question to:</label>
                 <select name="question_to" id="question-to">
                     <option value="All">All</option>
-                    <option value="a">a</option>
-                    <option value="b">b</option>
+                    <% for(user of users){ %>
+                        <% if(!(user._id.equals(loggedUser._id))){ %>
+                            
+                            <option value="<%= user.email %>"> <%= user.email %> </option>
+                        <% } %> 
+                        
+                    <% } %> 
+                    
                 </select>
             </div>
 

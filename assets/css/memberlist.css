@@ -1,0 +1,68 @@
+.member-list-container{
+    height: 98vh;
+    width: 700px;
+    border: 1px solid red;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.member-list-card{
+    height: 100px;
+    width: 700px;
+    margin-bottom: 7px;
+    border: 1px solid green;
+    display: flex;
+    position: relative;
+}
+
+.member-dtls{
+    height: 100px;
+    width: 550px;
+    border: 1px solid yellow;
+}
+
+.member-btns{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.member-btns button{
+    cursor: pointer; 
+    font-size: 1rem;
+    padding: 7px 10px;
+    border: none;
+    font-weight: 700;
+    background-color: rgb(114, 27, 27);
+    color: white;
+    border-radius: 6px;
+    box-shadow: -3px -3px 7px rgb(168, 168, 168), 3px 3px 7px rgb(206, 206, 206);
+}
+
+.member-btns button:hover{
+    color: rgb(114, 27, 27);
+    background-color: white;
+}
+
+.member-name{
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    display: flex;
+}
+
+.member-qtn{
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    display: flex;
+}
+
+.member-follower{
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    display: flex;
+}
