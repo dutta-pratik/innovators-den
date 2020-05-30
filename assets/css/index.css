@@ -81,6 +81,8 @@
     /* border: 1px solid green; */
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .post{
