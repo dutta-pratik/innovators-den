@@ -4,7 +4,7 @@
 
     <% if(locals.user){ %>
         
-        <h2 style="margin: 7px;">Question Sent</h2>
+        <h2 style="margin: 7px; background-color: #9e372f; color: white; padding: 2px 5px;">Question Sent</h2>
     <div class="qstn-sent">
         <!-- Question Sent -->
         
@@ -12,7 +12,9 @@
             <div class="post">
     
                 <div>
-                    <textarea name="post-data" id="post-data" cols="55" rows="7" readonly style="resize: none; "><%= specificPostSent[i].post %> </textarea>
+                    <textarea name="post-data" id="post-data" cols="55" rows="7" readonly style="resize: none; padding:5px; border:none; border-radius: 3px;box-shadow: inset 2px -1px 10px 0 rgba(0, 0, 0, 0.2),
+                    inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+                    "><%= specificPostSent[i].post %> </textarea>
                 </div>
             
                 <div id="post-btn">
@@ -67,14 +69,16 @@
     </div>
     <br>
 <hr>
-    <h2 style="margin: 7px;">Question Received</h2>
+    <h2 style="margin: 7px; background-color: #9e372f; color: white; padding: 2px 5px;">Question Received</h2>
     <div class="qstn-recieved">
         <!-- Question Received -->
         <% for(let i=0; i< postRecieved.length; i++){ %>
             <div class="post">
     
                 <div>
-                    <textarea name="post-data" id="post-data" cols="55" rows="7" readonly style="resize: none; "><%= postRecieved[i].post %> </textarea>
+                    <textarea name="post-data" id="post-data" cols="55" rows="7" readonly style="resize: none; padding:5px; border:none; border-radius: 3px;box-shadow: inset 2px -1px 10px 0 rgba(0, 0, 0, 0.2),
+                    inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+                    "><%= postRecieved[i].post %> </textarea>
                 </div>
             
                 <div id="post-btn">

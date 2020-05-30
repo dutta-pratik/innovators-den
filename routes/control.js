@@ -8,4 +8,6 @@ router.get("/like/:id", controlController.like);
 
 router.get("/dislike/:id", controlController.dislike);
 
+router.use("/ans", require("./answer"));
+
 module.exports = router;

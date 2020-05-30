@@ -74,7 +74,7 @@ module.exports.createUser = async function(req, res){
 
 
 module.exports.createNew =  function(req, res){
-    console.log(req.body);
+    // console.log(req.body);
     return res.render("create_new", {
         
     });
@@ -113,8 +113,8 @@ module.exports.signOut = function(req, res){
 module.exports.confirmEmail = async function(req, res){
     
     try{
-        console.log(req.params.userID);
-        console.log(req.params.code);
+        // console.log(req.params.userID);
+        // console.log(req.params.code);
         let user = await User.findOne({_id: req.params.userID});
         if(user){
             if(user.confirm_mail_status == true){
@@ -145,7 +145,7 @@ module.exports.myProfile = async function(req, res){
             return res.redirect("/");
         }
         let user = req.user;
-        console.log(user);
+        // console.log(user);
         return res.render("my_profile",{
             user: user
         });
@@ -161,7 +161,7 @@ module.exports.saveProfile = async function(req, res){
             return res.redirect("/");
         }
         let user = await User.findOne({_id: req.user._id});
-        console.log(req.body);
+        // console.log(req.body);
         if(user){
             user.first_name = req.body.firstname,
             user.second_name = req.body.secondname,
@@ -215,7 +215,7 @@ module.exports.followMember = async function(req, res){
 module.exports.unfollowMember = async function(req, res){
     try{
         let currentUser = req.user;
-        console.log(currentUser);
+        // console.log(currentUser);
         let userUnFollow = req.params.id;
         let isUser = await User.findOne({_id: userUnFollow});
         if(isUser){

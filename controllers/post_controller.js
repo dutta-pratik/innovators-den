@@ -3,9 +3,9 @@ const User = require("../models/user");
 
 module.exports.createPost = async function(req, res){
     try{
-        console.log(req.user);
+        // console.log(req.user);
         // console.log(locals.user);
-        console.log(req.body);
+        // console.log(req.body);
         if(req.body.interest == null){
             req.flash("error", "Select Atleast one TAG");
             return res.redirect("/");
@@ -54,7 +54,7 @@ module.exports.viewPost = async function(req, res){
         let post = await Post.findOne({_id: postId})
         .populate("-createdAt")
         .populate("ans");
-        console.log(post);
+        // console.log(post);
         if(post){
             return res.render("view_post",{
                 post,

@@ -16,6 +16,28 @@
     flex-direction: column;
 }
 
+.qstn-sent::-webkit-scrollbar { /* WebKit*/
+    width: 7px;
+    height: auto;
+    color: #9e372f;
+}
+/* Track */
+.qstn-sent::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #9e372f; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.qstn-sent::-webkit-scrollbar-thumb {
+  background: #9e372f; 
+  border-radius: 7px;
+}
+
+/* Handle on hover */
+.qstn-sent::-webkit-scrollbar-thumb:hover {
+  background: #9e372f; 
+} 
+
 .qstn-recieved{
     height: auto;
     /* max-height: 45vh; */
@@ -25,14 +47,41 @@
     overflow-x: hidden;
 }
 
+.qstn-recieved::-webkit-scrollbar { /* WebKit*/
+    width: 7px;
+    height: auto;
+    color: #9e372f;
+}
+/* Track */
+.qstn-recieved::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #9e372f; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.qstn-recieved::-webkit-scrollbar-thumb {
+  background: #9e372f; 
+  border-radius: 7px;
+}
+
+/* Handle on hover */
+.qstn-recieved::-webkit-scrollbar-thumb:hover {
+  background: #9e372f; 
+} 
+
 .post{
     height: auto;
     /* border: 1px solid red; */
     position: relative;
-    margin-bottom: 5px;
+    margin: 5px 7px;
+    padding: 5px;
     /* overflow-y: scroll;
     overflow-x: hidden; */
+    box-shadow: -3px -3px 7px rgb(179, 179, 179), 3px 3px 7px rgb(228, 228, 228);
+    
 }
+
+
 
 #post-data{
     overflow-y: scroll;
@@ -71,7 +120,7 @@
     margin-left: 15px;
     position: absolute;
     top: 75px;
-    left: -5px;
+    left: -10px;
     color: rgb(145, 47, 47);
 }
 #like:focus{

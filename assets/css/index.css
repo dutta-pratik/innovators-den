@@ -8,33 +8,55 @@
 
 /* Box */
 .box{
-    margin: 20px 0px 10px 30px;
+    margin: 3px 0px 10px 30px;
     /* border: 1px solid orange; */
     position: absolute;
+    padding: 8px 8px 0px 8px;
+    box-shadow: -3px -3px 7px rgb(179, 179, 179), 3px 3px 7px rgb(228, 228, 228);
 }
 #post-box{
     resize: none;
     font-size: medium;
+    margin-bottom: 3px;
 }
 
 #question-to{
     margin-top: 7px;
+    margin-bottom: 5px;
+}
+
+#submit{
+    /* font-size: 1rem; */
+    padding: 4px 8px;
+    border: none;
+    font-weight: 700;
+    background-color: rgb(114, 27, 27);
+    color: white;
+    border-radius: 6px;
+    box-shadow: -3px -3px 7px rgb(168, 168, 168), 3px 3px 7px rgb(206, 206, 206);
+}
+#submit:hover{
+    color: rgb(114, 27, 27);
+    background-color: white;
 }
 
 /* Posts */
 .post-list{
-    height: 97vh;
-    width: 610px;
-    margin: 180px 0px 10px 30px;
-    /* border: 1px solid black; */
-    position: fixed;
+    height: 65vh;
+    width: 625px;
+    margin: 200px 0px 10px 30px;
+    padding: 8px;
     overflow-y: scroll;
     overflow-x: hidden;
+    /* border: 1px solid black; */
+    position: fixed;
+    box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+    inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
 }
-.post-list::-webkit-scrollbar { /* WebKit */
+.post-list::-webkit-scrollbar { /* WebKit*/
     width: 7px;
     height: auto;
-    /*color: #131c44;*/
+    color: #9e372f;
 }
 /* Track */
 .post-list::-webkit-scrollbar-track {
@@ -44,14 +66,14 @@
  
 /* Handle */
 .post-list::-webkit-scrollbar-thumb {
-  background: #12244B; 
+  background: #9e372f; 
   border-radius: 7px;
 }
 
 /* Handle on hover */
 .post-list::-webkit-scrollbar-thumb:hover {
   background: #676E90; 
-}
+} 
 /* Post container */
 .post-container{
     height: auto;
@@ -67,7 +89,8 @@
     /* border: 1px solid red; */
     position: relative;
     margin-bottom: 5px;
-    
+    box-shadow: -3px -3px 7px rgb(168, 168, 168), 3px 3px 7px rgb(206, 206, 206);
+    padding: 5px;
     display: flex;
 }
 #post-data{
@@ -81,7 +104,7 @@
     flex-direction: column;
     /* border: 1px solid red; */
     padding: 5px;
-    left: 455px;
+    left: 470px;
 }
 #like{
     font-size: x-large;
@@ -106,7 +129,7 @@
 }
 #goto{
     cursor: pointer;
-    margin-left: 17px;
+    margin-left: 10px;
     color: rgb(145, 47, 47);
 }
 #like:focus{

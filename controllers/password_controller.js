@@ -3,24 +3,24 @@ const keyGen = require("random-key");
 const nodeMailer = require("../config/nodemailer");
 
 module.exports.resetPasswordPage =  function(req, res){
-    console.log(req.body);
+    // console.log(req.body);
     return res.render("reset_password_page");
     // return res.redirect("resetpassword");
 }
 
 module.exports.resetPassword = async function(req, res){
-    console.log(req.body);
+    // console.log(req.body);
     
     let user = await User.findOne({email: req.body.email});
-    console.log(user);
+    // console.log(user);
     if(user){
         //TODO set an epiry to reset_code field 
         let randCode = keyGen.generateDigits(5);
-        console.log(randCode);
+        // console.log(randCode);
         //TODO check if th code is not assigned to anyother user which is not expired
         user.reset_code = randCode;
         user.save();
-        console.log(user.email);
+        // console.log(user.email);
         //nodemailer
         let htmlString = nodeMailer.renderTemplate({code: randCode}, "/reset_code_page.ejs");
                 
@@ -56,15 +56,15 @@ module.exports.checkCode = async function(req, res){
     // console.log(req.body);
     try{
         let user = await User.findOne({email: req.params.mail});
-        console.log(user);
-        console.log(req.params.mail);
-        console.log(req.body.password[0], req.body.password[1]);
+        // console.log(user);
+        // console.log(req.params.mail);
+        // console.log(req.body.password[0], req.body.password[1]);
         if(req.body.code == user.reset_code){
-            console.log("1");
-            console.log(user.reset_code, req.body.reset_code);
+            // console.log("1");
+            // console.log(user.reset_code, req.body.reset_code);
             if(req.body.password[0] == req.body.password[1]){
                 
-                console.log("2");
+                // console.log("2");
                 user.password = req.body.password[0];
                 await user.save();
                 req.flash("success", "Password reset successfully");
